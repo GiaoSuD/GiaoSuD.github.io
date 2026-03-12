@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phùng Văn Đạt - ML/AI Engineer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .section {
+            min-height: 100vh;
+            padding: 5rem 2rem;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 1s ease;
+        }
+        
+        .section.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .nav-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ddd;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background-color: #3b82f6;
+            transform: scale(1.3);
+        }
+        
+        .profile-img-container {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border: 4px solid #3b82f6;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+
+        .experience-card, .skill-category {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.6s ease;
+        }
+        
+        .experience-card.active, .skill-category.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .project-card {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease;
+        }
+        
+        .project-card.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex; justify-content: center; align-items: center;
+            z-index: 1000; opacity: 0; pointer-events: none;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.active { opacity: 1; pointer-events: all; }
+        
+        .modal-content {
+            background-color: white; padding: 2rem; border-radius: 15px;
+            width: 90%; max-width: 800px; max-height: 85vh; overflow-y: auto;
+        }
+
+        .tag {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            position: fixed; right: 30px; top: 50%;
+            transform: translateY(-50%); z-index: 100;
+        }
+
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .section { padding: 2rem 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="nav-menu flex flex-col items-center">
+        <div class="nav-dot active" data-section="home"></div>
+        <div class="nav-dot" data-section="about"></div>
+        <div class="nav-dot" data-section="experience"></div>
+        <div class="nav-dot" data-section="skills"></div>
+        <div class="nav-dot" data-section="projects"></div>
+    </div>
+    
+    <section id="home" class="section active bg-gradient-to-br from-blue-50 to-indigo-50 flex items-center justify-center">
+        <div class="container mx-auto max-w-5xl flex flex-col md:flex-row items-center justify-between gap-10">
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-2">Phùng Văn Đạt</h1>
+                <h2 class="text-2xl text-blue-600 font-medium mb-6">ML/AI Engineer</h2>
+                
+                <div class="space-y-3 text-gray-600 mb-8">
+                    <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i> Ho Chi Minh City, Vietnam</p>
+                    <p><i class="fas fa-phone text-blue-500 w-6"></i> (+84) 0326009793</p>
+                    <p><i class="fas fa-envelope text-blue-500 w-6"></i> vandatphung2009@gmail.com</p>
+                </div>
+                
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="https://www.linkedin.com/in/v%C4%83n-%C4%91%E1%BA%A1t-ph%C3%B9ng-330383311/" class="text-3xl hover:text-blue-600 transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/GiaoSuD" class="text-3xl hover:text-gray-900 transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://www.facebook.com/professorD0904" class="text-3xl hover:text-blue-500 transition-colors"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="profile-img-container flex items-center justify-center">
+                <i class="fas fa-user-astronaut text-8xl text-blue-500"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section bg-white">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-10">About & Education</h2>
+            <div class="bg-blue-50 p-8 rounded-2xl shadow-sm mb-10">
+                <p class="text-gray-700 leading-relaxed text-lg italic">
+                    "A passionate Machine Learning Engineer with a solid Computer Science foundation.
+                    I continuously seek to learn and grow in professional environments.
+                    Through real-world projects in NLP, Computer Vision, and Computer Graphics,
+                    I have developed strong problem-solving skills and effective teamwork."
+                </p>
+            </div>
+            
+            <div class="border-l-4 border-blue-500 pl-6 ml-4">
+                <h3 class="text-xl font-bold mb-2">University of Information Technology (UIT) - VNU HCM</h3>
+                <p class="text-blue-600 font-medium">Bachelor of Computer Science | 2022 - 2025</p>
+                <ul class="mt-2 space-y-1 text-gray-600">
+                    <li><i ></i> Score: 7.2/10</li>
+                    <li><i ></i> TOEIC: 700</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section id="experience" class="section bg-gray-50">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+            
+            <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500">
+                <div class="flex flex-col md:flex-row justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold">ML/AI Engineer Intern</h3>
+                        <p class="text-blue-600 font-semibold text-lg">IOTA SmartHome</p>
+                    </div>
+                    <p class="text-gray-500 font-medium">10/2025 - 03/2026</p>
+                </div>
+                <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                    <li>Designed and developed AI models to recognize symbols on engineering blueprints.</li>
+                    <li>Performed data preprocessing, trained deep learning models, and evaluated on real-world datasets.</li>
+                    <li>Improved model accuracy to <b>70%</b> and optimized detection of small objects.</li>
+                    <li><b>Technologies:</b> Python, PyTorch, OpenCV, YOLO, AnyLabeling, Roboflow, SAHI.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section bg-white">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-code mr-2"></i> Programming</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Java</span> <span class="tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-brain mr-2"></i> ML/DL</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Scikit-learn</span> <span class="tag">TensorFlow</span> <span class="tag">PyTorch</span> <span class="tag">YOLO</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-language mr-2"></i> NLP</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">spaCy</span> <span class="tag">NLTK</span> <span class="tag">Hugging Face</span> <span class="tag">Transformers</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-eye mr-2"></i> Computer Vision</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">OpenCV</span> <span class="tag">MediaPipe</span> <span class="tag">SAHI</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-globe mr-2"></i> Web & Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Flask</span> <span class="tag">React</span> <span class="tag">MCP Server</span> <span class="tag">Docker</span> <span class="tag">Git</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-users mr-2"></i> Collaboration</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">Agile/Scrum</span> <span class="tag">Jira</span> <span class="tag">Teams</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="projects" class="section bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold text-center mb-4">Featured Projects</h2>
+            <p class="text-center text-gray-500 mb-12">Click a project to view technical details</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(1)">
+                    <div class="h-32 bg-blue-500 flex items-center justify-center text-white">
+                        <i class="fas fa-image text-4xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">Scene Classification</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">Classify scenes (beach, city, forest) using ResNet50.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(2)">
+                    <div class="h-32 bg-green-500 flex items-center justify-center text-white">
+                        <i class="fas fa-gamepad text-4xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">Backroom 3D Game</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">A 3D horror exploration game with procedurally generated mazes and custom shaders.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(3)">
+                    <div class="h-32 bg-yellow-500 flex items-center justify-center text-white">
+                        <i class="fas fa-robot text-4xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">Operations Research Agent</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">An AI agent that converts natural language into optimization code for Gurobi.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(4)">
+                    <div class="h-32 bg-purple-500 flex items-center justify-center text-white">
+                        <i class="fas fa-search text-4xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">TechWiki Search</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">A smart search tool using BM25 and WordNet.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-20 bg-blue-900 text-white p-10 rounded-3xl">
+                <h2 class="text-2xl font-bold mb-6 text-center">What I Can Contribute</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                        <p>Deploy practical AI/ML and Computer Vision solutions.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                        <p>Optimize model performance and troubleshoot system issues.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                        <p>Develop large-scale data crawlers and collection pipelines.</p>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                        <p>Build end-to-end systems (Full-stack AI deployment).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="modal" id="projectModal">
+        <div class="modal-content">
+            <div class="flex justify-between items-center mb-6 border-b pb-4">
+                <h2 class="text-2xl font-bold text-blue-600" id="mTitle">Title</h2>
+                <button class="text-3xl hover:text-red-500" onclick="closeModal()">&times;</button>
+            </div>
+            <div id="mBody" class="text-gray-700 leading-relaxed"></div>
+            <div class="mt-8 flex flex-wrap gap-4" id="mLinks"></div>
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            1: {
+                title: "Scene Classification",
+                    desc: `A deep learning project for scene classification using transfer learning with <b>ResNet50</b>.
+                    <ul class="list-disc pl-5 mt-4 space-y-2">
+                        <li>Team Size: 2</li>
+                        <li>Built preprocessing pipeline (resize, normalization) following ImageNet standards.</li>
+                        <li>Developed a Flask REST API supporting single-image and batch predictions.</li>
+                        <li>Implemented a modern drag-and-drop web UI showing confidence scores.</li>
+                        <li>Improved inference efficiency using data augmentation and dropout regularization.</li>
+                    </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Scene-Classification", icon: "fab fa-github" }]
+            },
+            2: {
+                title: "Backroom 3D Game",
+                desc: `A 3D horror exploration game inspired by "The Backrooms" with procedurally generated mazes.
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li>Team Size: 3</li>
+                    <li>Built environments and moody lighting effects using Three.js.</li>
+                    <li>Implemented first-person navigation with PointerLock controls.</li>
+                    <li>Optimized assets and shaders to maintain smooth FPS in the browser.</li>
+                    <li>Integrated item interactions and immersive spatial audio.</li>
+                </ul>`,
+                links: [
+                    { name: "GitHub", url: "https://github.com/GiaoSuD/Computer_Graphics", icon: "fab fa-github" },
+                    { name: "Play Game", url: "https://giaosud.github.io/Computer_Graphics/", icon: "fas fa-play" }
+                ]
+            },
+            3: {
+                title: "Operations Research Agent",
+                desc: `A system using LLMs to automatically solve optimization problems from natural language descriptions.
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li>Team Size: 2</li>
+                    <li>Applied NLP to translate user requirements into mathematical models.</li>
+                    <li>Automatically generated and executed <b>Gurobi</b> code to find optimal solutions.</li>
+                    <li>Supports multiple LLM backends: OpenAI, Claude, Gemini, and Ollama (local).</li>
+                    <li>Integrated an MCP server to extend API call capabilities.</li>
+                </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Or-Agent", icon: "fab fa-github" }]
+            },
+            4: {
+                title: "TechWiki Smart Search Engine",
+                
+                desc: `A lightweight Wikipedia reader combined with dictionary lookup and semantic search.
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li>Team Size: 3</li>
+                    <li>Integrated WordNet for definitions, synonyms, and antonyms.</li>
+                    <li>Used fuzzy search to handle user typos.</li>
+                    <li>Applied <b>BM25</b> for document ranking over large content collections.</li>
+                    <li>Cached index structures for instant search responses.</li>
+                </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Smart-Search-Engine", icon: "fab fa-github" }]
+            }
+        };
+
+        function openModal(id) {
+            const p = projectData[id];
+            document.getElementById('mTitle').innerText = p.title;
+            document.getElementById('mBody').innerHTML = p.desc;
+            const linksCont = document.getElementById('mLinks');
+            linksCont.innerHTML = p.links.map(l => 
+                `<a href="${l.url}" target="_blank" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition-colors flex items-center gap-2">
+                    <i class="${l.icon}"></i> ${l.name}
+                </a>`
+            ).join('');
+            document.getElementById('projectModal').classList.add('active');
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').classList.remove('active');
+        }
+
+        // Scroll animations
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            const dots = document.querySelectorAll('.nav-dot');
+            
+            sections.forEach((sec, idx) => {
+                const rect = sec.getBoundingClientRect();
+                if (rect.top < window.innerHeight * 0.7) {
+                    sec.classList.add('active');
+                    dots.forEach(d => d.classList.remove('active'));
+                    dots[idx].classList.add('active');
+                    
+                    // Animate child elements
+                    sec.querySelectorAll('.experience-card, .skill-category, .project-card').forEach(el => {
+                        el.classList.add('active');
+                    });
+                }
+            });
+        });
+
+        // Trigger scroll once on load
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
