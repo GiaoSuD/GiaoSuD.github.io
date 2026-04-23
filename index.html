@@ -205,7 +205,7 @@
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
                     <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-code mr-2"></i> Programming</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Java</span> <span class="tag">JavaScript</span>
+                        <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Java</span> <span class="tag">JavaScript</span> <span class="tag">SQL</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
@@ -215,9 +215,9 @@
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-language mr-2"></i> NLP</h3>
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-language mr-2"></i> NLP & GenAI</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">spaCy</span> <span class="tag">NLTK</span> <span class="tag">Hugging Face</span> <span class="tag">Transformers</span>
+                        <span class="tag">LangChain</span> <span class="tag">Ollama</span> <span class="tag">ChromaDB</span> <span class="tag">Hugging Face</span> <span class="tag">spaCy</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
@@ -229,7 +229,7 @@
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
                     <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-globe mr-2"></i> Web & Tools</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">Flask</span> <span class="tag">React</span> <span class="tag">MCP Server</span> <span class="tag">Docker</span> <span class="tag">Git</span>
+                        <span class="tag">FastAPI</span> <span class="tag">React</span> <span class="tag">PostgreSQL</span> <span class="tag">Docker</span> <span class="tag">Git</span> <span class="tag">Flask</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
@@ -247,8 +247,19 @@
             <h2 class="text-3xl font-bold text-center mb-4">Featured Projects</h2>
             <p class="text-center text-gray-500 mb-12">Click a project to view technical details</p>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
                 <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(1)">
+                    <div class="h-32 bg-teal-500 flex items-center justify-center text-white">
+                        <i class="fas fa-stethoscope text-4xl"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">Bilingual Medical RAG</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">A full-stack AI medical assistant using LangChain, ChromaDB, and local LLMs.</p>
+                    </div>
+                </div>
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(2)">
                     <div class="h-32 bg-blue-500 flex items-center justify-center text-white">
                         <i class="fas fa-image text-4xl"></i>
                     </div>
@@ -257,7 +268,8 @@
                         <p class="text-sm text-gray-600 line-clamp-2">Classify scenes (beach, city, forest) using ResNet50.</p>
                     </div>
                 </div>
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(2)">
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(3)">
                     <div class="h-32 bg-green-500 flex items-center justify-center text-white">
                         <i class="fas fa-gamepad text-4xl"></i>
                     </div>
@@ -266,7 +278,8 @@
                         <p class="text-sm text-gray-600 line-clamp-2">A 3D horror exploration game with procedurally generated mazes and custom shaders.</p>
                     </div>
                 </div>
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(3)">
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(4)">
                     <div class="h-32 bg-yellow-500 flex items-center justify-center text-white">
                         <i class="fas fa-robot text-4xl"></i>
                     </div>
@@ -275,7 +288,8 @@
                         <p class="text-sm text-gray-600 line-clamp-2">An AI agent that converts natural language into optimization code for Gurobi.</p>
                     </div>
                 </div>
-                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(4)">
+
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(5)">
                     <div class="h-32 bg-purple-500 flex items-center justify-center text-white">
                         <i class="fas fa-search text-4xl"></i>
                     </div>
@@ -284,6 +298,7 @@
                         <p class="text-sm text-gray-600 line-clamp-2">A smart search tool using BM25 and WordNet.</p>
                     </div>
                 </div>
+
             </div>
 
             <div class="mt-20 bg-blue-900 text-white p-10 rounded-3xl">
@@ -324,18 +339,30 @@
     <script>
         const projectData = {
             1: {
-                title: "Scene Classification",
-                    desc: `A deep learning project for scene classification using transfer learning with <b>ResNet50</b>.
-                    <ul class="list-disc pl-5 mt-4 space-y-2">
-                        <li>Team Size: 2</li>
-                        <li>Built preprocessing pipeline (resize, normalization) following ImageNet standards.</li>
-                        <li>Developed a Flask REST API supporting single-image and batch predictions.</li>
-                        <li>Implemented a modern drag-and-drop web UI showing confidence scores.</li>
-                        <li>Improved inference efficiency using data augmentation and dropout regularization.</li>
-                    </ul>`,
-                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Scene-Classification", icon: "fab fa-github" }]
+                title: "Bilingual Medical RAG Chatbot",
+                desc: `A full-stack AI assistant for medical queries using Retrieval-Augmented Generation (RAG).
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li>Integrated <b>LangChain</b>, <b>ChromaDB</b>, and local LLMs (<b>Ollama</b>) to generate context-aware, real-time streaming responses.</li>
+                    <li>Built an offline Vietnamese-English translation pipeline using Deep Translator.</li>
+                    <li>Designed a resource-optimized hybrid architecture: React and <b>PostgreSQL</b> running in Docker, while the FastAPI and AI inference engine run locally.</li>
+                    <li>Implemented session management to save, load, and delete chat histories.</li>
+                    <li>Calculated and displayed real-time evaluation metrics including Time To First Token (TTFT) and semantic relevance scores.</li>
+                </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/ChatBot-RAG-For-Health-Care", icon: "fab fa-github" }] // Nhớ thay URL thực tế
             },
             2: {
+                title: "Scene Classification",
+                desc: `A deep learning project for scene classification using transfer learning with <b>ResNet50</b>.
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li>Team Size: 2</li>
+                    <li>Built preprocessing pipeline (resize, normalization) following ImageNet standards.</li>
+                    <li>Developed a Flask REST API supporting single-image and batch predictions.</li>
+                    <li>Implemented a modern drag-and-drop web UI showing confidence scores.</li>
+                    <li>Improved inference efficiency using data augmentation and dropout regularization.</li>
+                </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Scene-Classification", icon: "fab fa-github" }]
+            },
+            3: {
                 title: "Backroom 3D Game",
                 desc: `A 3D horror exploration game inspired by "The Backrooms" with procedurally generated mazes.
                 <ul class="list-disc pl-5 mt-4 space-y-2">
@@ -350,7 +377,7 @@
                     { name: "Play Game", url: "https://giaosud.github.io/Computer_Graphics/", icon: "fas fa-play" }
                 ]
             },
-            3: {
+            4: {
                 title: "Operations Research Agent",
                 desc: `A system using LLMs to automatically solve optimization problems from natural language descriptions.
                 <ul class="list-disc pl-5 mt-4 space-y-2">
@@ -362,9 +389,8 @@
                 </ul>`,
                 links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Or-Agent", icon: "fab fa-github" }]
             },
-            4: {
+            5: {
                 title: "TechWiki Smart Search Engine",
-                
                 desc: `A lightweight Wikipedia reader combined with dictionary lookup and semantic search.
                 <ul class="list-disc pl-5 mt-4 space-y-2">
                     <li>Team Size: 3</li>
