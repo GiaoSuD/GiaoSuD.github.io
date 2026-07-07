@@ -136,7 +136,7 @@
                 <h2 class="text-2xl text-blue-600 font-medium mb-6">ML/AI Engineer</h2>
                 
                 <div class="space-y-3 text-gray-600 mb-8">
-                    <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i> Ho Chi Minh City, Vietnam</p>
+                    <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i>  Vietnam</p>
                     <p><i class="fas fa-phone text-blue-500 w-6"></i> (+84) 0326009793</p>
                     <p><i class="fas fa-envelope text-blue-500 w-6"></i> vandatphung2009@gmail.com</p>
                 </div>
@@ -175,26 +175,42 @@
             </div>
         </div>
     </section>
-    
-    <section id="experience" class="section bg-gray-50">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
-            
-            <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500">
-                <div class="flex flex-col md:flex-row justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-bold">ML/AI Engineer Intern</h3>
-                        <p class="text-blue-600 font-semibold text-lg">IOTA SmartHome</p>
-                    </div>
-                    <p class="text-gray-500 font-medium">10/2025 - 03/2026</p>
+<section id="experience" class="section bg-gray-50">
+    <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
+
+        <!-- Intern -->
+        <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500 mb-8">
+            <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold">ML/AI Engineer Intern</h3>
+                    <p class="text-blue-600 font-semibold text-lg">IOTA SmartHome, Vietnam</p>
                 </div>
-                <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                    <li>Designed and developed AI models to recognize symbols on engineering blueprints.</li>
-                    <li>Performed data preprocessing, trained deep learning models, and evaluated on real-world datasets.</li>
-                    <li>Improved model accuracy to <b>70%</b> and optimized detection of small objects.</li>
-                    <li><b>Technologies:</b> Python, PyTorch, OpenCV, YOLO, AnyLabeling, Roboflow, SAHI.</li>
-                </ul>
+                <p class="text-gray-500 font-medium">Jun 2025 – Sep 2025</p>
             </div>
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                <li>Designed and developed AI models to recognize symbols on engineering blueprints.</li>
+                <li>Performed data preprocessing, trained deep learning models, and evaluated models on real-world datasets.</li>
+                <li>Improved model accuracy to <b>70%</b> and optimized small-object detection.</li>
+                <li><b>Technologies:</b> Python, PyTorch, OpenCV, YOLO, AnyLabeling, Roboflow, SAHI.</li>
+            </ul>
+        </div>
+        <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-green-500">
+            <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold">ML/AI Engineer</h3>
+                    <p class="text-green-600 font-semibold text-lg">IOTA SmartHome, Vietnam</p>
+                </div>
+                <p class="text-gray-500 font-medium">Oct 2025 – Apr 2026</p>
+            </div>
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                <li>Developed an AI-powered document filtering system to distinguish engineering blueprint pages from non-blueprint documents.</li>
+                <li>Built a document processing pipeline using OCR to extract textual content from PDF pages, then leveraged Large Language Models (LLMs) to interpret and classify each page based on its semantic content.</li>
+                <li>Improved blueprint page identification accuracy to <b>82%</b>, significantly reducing manual document review and preprocessing time.</li>
+                <li><b>Technologies:</b> Python, FastAPI, OCR, LLMs, Prompt Engineering.</li>
+            </ul>
         </div>
     </section>
 
@@ -296,6 +312,18 @@
                     <div class="p-5">
                         <h3 class="font-bold mb-2">TechWiki Search</h3>
                         <p class="text-sm text-gray-600 line-clamp-2">A smart search tool using BM25 and WordNet.</p>
+                    </div>
+                </div>
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(6)">
+                    <div class="h-32 bg-indigo-600 flex items-center justify-center text-white">
+                        <div class="relative">
+                            <i class="fas fa-microphone text-4xl"></i>
+                            <i class="fas fa-bolt text-xl absolute -top-2 -right-2 text-yellow-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">Real-time Live Caption & AI Assistant</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">A production-ready desktop tool with real-time Speech-to-Text, automatic LLM conversation form filling, and a custom Rust-built security module.</p>
                     </div>
                 </div>
 
@@ -400,8 +428,21 @@
                     <li>Cached index structures for instant search responses.</li>
                 </ul>`,
                 links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/Smart-Search-Engine", icon: "fab fa-github" }]
+            },
+            6: {
+                title: "Real-time Live Caption & AI Voice Assistant",
+                desc: `A production-ready commercial desktop application designed to streamline customer service operations through intelligent audio processing and cloud NLP integrations.
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li><b>Speech-to-Text Architecture:</b> Built an offline, real-time streaming speech recognition pipeline using <b>Vosk (Kaldi)</b> and <b>soundcard</b> loopback audio capture.</li>
+                    <li><b>Multi-threaded Concurrency:</b> Engineered a highly concurrent system with 4 independent Python threads managed via thread-safe queues to ensure a lag-free UI and sub-second inference latency.</li>
+                    <li><b>Cloud LLM & Prompt Engineering:</b> Integrated Groq Cloud APIs for strict-format conversation summarization (extracting customer info, emails, intent) and contextual smart replies.</li>
+                    <li><b>Production Optimization:</b> Resolved a critical embedded environment memory leak by enforcing active garbage collection (gc.collect) and deterministic thread lifecycle handling.</li>
+                    <li><b>Rust Security & OTA Delivery:</b> Developed a native activation module in <b>Rust</b> (via Maturin) to prevent decompilation, and bundled the system with a custom CustomTkinter OTA updater for silent GitHub-based software deployment.</li>
+                </ul>`,
+                links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/live-caption-dist", icon: "fab fa-github" }]
             }
         };
+            
 
         function openModal(id) {
             const p = projectData[id];
