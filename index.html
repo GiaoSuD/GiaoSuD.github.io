@@ -136,7 +136,7 @@
                 <h2 class="text-2xl text-blue-600 font-medium mb-6">ML/AI Engineer</h2>
                 
                 <div class="space-y-3 text-gray-600 mb-8">
-                    <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i>  Vietnam</p>
+                    <p><i class="fas fa-map-marker-alt text-blue-500 w-6"></i> Ho Chi Minh City, Vietnam</p>
                     <p><i class="fas fa-phone text-blue-500 w-6"></i> (+84) 0326009793</p>
                     <p><i class="fas fa-envelope text-blue-500 w-6"></i> vandatphung2009@gmail.com</p>
                 </div>
@@ -173,45 +173,75 @@
                     <li><i ></i> TOEIC: 700</li>
                 </ul>
             </div>
+
+            <div class="mt-8 bg-green-50 p-6 rounded-xl border-l-4 border-green-500">
+                <h3 class="text-lg font-bold text-green-700 mb-3">Certifications</h3>
+                <ul class="space-y-1 text-gray-700">
+                    <li><i class="fas fa-certificate text-green-500 mr-2"></i><b>VinAI20K</b> — VinUni (2026)</li>
+                    <li><i class="fas fa-certificate text-green-500 mr-2"></i><b>Google Data Analytics</b> — Coursera (2026)</li>
+                </ul>
+            </div>
         </div>
     </section>
 <section id="experience" class="section bg-gray-50">
     <div class="container mx-auto max-w-4xl">
         <h2 class="text-3xl font-bold text-center mb-12">Work Experience</h2>
 
-        <!-- Intern -->
-        <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-blue-500 mb-8">
+        <!-- VINROBOTICS -->
+        <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-purple-500 mb-8">
             <div class="flex flex-col md:flex-row justify-between mb-4">
                 <div>
                     <h3 class="text-2xl font-bold">ML/AI Engineer Intern</h3>
-                    <p class="text-blue-600 font-semibold text-lg">IOTA SmartHome, Vietnam</p>
+                    <p class="text-purple-600 font-semibold text-lg">VINROBOTICS, Ha Noi, Vietnam</p>
                 </div>
-                <p class="text-gray-500 font-medium">Jun 2025 – Sep 2025</p>
+                <p class="text-gray-500 font-medium">Aug 2026 – Oct 2026</p>
             </div>
 
             <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                <li>Designed and developed AI models to recognize symbols on engineering blueprints.</li>
-                <li>Performed data preprocessing, trained deep learning models, and evaluated models on real-world datasets.</li>
-                <li>Improved model accuracy to <b>70%</b> and optimized small-object detection.</li>
-                <li><b>Technologies:</b> Python, PyTorch, OpenCV, YOLO, AnyLabeling, Roboflow, SAHI.</li>
+                <li>Developed an end-to-end egocentric video processing pipeline based on <b>ACE-Ego-Hand</b> for 3D bimanual hand motion estimation, extracting MANO pose, shape, and camera-space translation across video frames.</li>
+                <li>Reimplemented the <b>Wan2.2-5B</b> backbone, VAE encoder, and MANO components using PyTorch, integrating pretrained weights and <b>LoRA</b> adapters for efficient inference without heavyweight dependencies.</li>
+                <li>Optimized video inference through streaming decoding/encoding, batched temporal windows, and model compilation to improve GPU utilization.</li>
+                <li>Built data processing and visualization tools, including Parquet-based outputs, <b>LeRobot</b> annotations, and fisheye-to-pinhole camera undistortion.</li>
+                <li><b>Technologies:</b> Python, PyTorch, ACE-Ego-Hand, MANO, LoRA, LeRobot.</li>
             </ul>
         </div>
+
+        <!-- VRIC X VINSMART FUTURE -->
+        <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-teal-500 mb-8">
+            <div class="flex flex-col md:flex-row justify-between mb-4">
+                <div>
+                    <h3 class="text-2xl font-bold">AI Research Intern</h3>
+                    <p class="text-teal-600 font-semibold text-lg">VRIC x VINSMART FUTURE, Ha Noi, Vietnam</p>
+                </div>
+                <p class="text-gray-500 font-medium">Aug 2026 – Oct 2026</p>
+            </div>
+
+            <ul class="list-disc pl-5 space-y-2 text-gray-600">
+                <li>Researched and designed an <b>open-vocabulary object detection</b> and multi-object tracking pipeline for CCTV streams, integrating <b>Detic</b> (21K object categories) with <b>MASA</b> for appearance-based identity association.</li>
+                <li>Investigated low-frame-rate tracking (<b>0.2–2 FPS</b>) for scalable multi-camera surveillance, analyzing appearance embeddings and bi-softmax / cosine similarity matching strategies.</li>
+                <li>Designed experimental evaluations and ablation studies on ID consistency, matching thresholds, and tracking robustness under sparse temporal sampling.</li>
+                <li><b>Technologies:</b> Detic, MASA, CLIP embeddings, PyTorch.</li>
+            </ul>
+        </div>
+
+        <!-- IOTA SmartHome -->
         <div class="experience-card bg-white p-8 rounded-xl shadow-md border-t-4 border-green-500">
             <div class="flex flex-col md:flex-row justify-between mb-4">
                 <div>
-                    <h3 class="text-2xl font-bold">ML/AI Engineer</h3>
-                    <p class="text-green-600 font-semibold text-lg">IOTA SmartHome, Vietnam</p>
+                    <h3 class="text-2xl font-bold">ML/AI Engineer Intern – Fresher</h3>
+                    <p class="text-green-600 font-semibold text-lg">IOTA SmartHome, Ho Chi Minh City, Vietnam</p>
                 </div>
-                <p class="text-gray-500 font-medium">Oct 2025 – Apr 2026</p>
+                <p class="text-gray-500 font-medium">Jun 2025 – Apr 2026</p>
             </div>
 
             <ul class="list-disc pl-5 space-y-2 text-gray-600">
-                <li>Developed an AI-powered document filtering system to distinguish engineering blueprint pages from non-blueprint documents.</li>
-                <li>Built a document processing pipeline using OCR to extract textual content from PDF pages, then leveraged Large Language Models (LLMs) to interpret and classify each page based on its semantic content.</li>
-                <li>Improved blueprint page identification accuracy to <b>82%</b>, significantly reducing manual document review and preprocessing time.</li>
-                <li><b>Technologies:</b> Python, FastAPI, OCR, LLMs, Prompt Engineering.</li>
+                <li>Designed and developed AI models to recognize symbols on engineering blueprints; improved object detection accuracy to <b>70%</b> by optimizing small-object detection.</li>
+                <li>Built an OCR-based workflow to extract text from PDF pages, then leveraged <b>LLMs</b> to interpret and classify blueprint vs. non-blueprint documents.</li>
+                <li>Improved document classification accuracy to <b>82%</b> through prompt engineering, significantly reducing manual review and preprocessing time.</li>
+                <li><b>Technologies:</b> Python, PyTorch, OpenCV, YOLO, OCR, LLMs, FastAPI, SAHI.</li>
             </ul>
         </div>
+    </div>
     </section>
 
     <section id="skills" class="section bg-white">
@@ -219,39 +249,33 @@
             <h2 class="text-3xl font-bold text-center mb-12">Skills</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-code mr-2"></i> Programming</h3>
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-brain mr-2"></i> AI/ML</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Java</span> <span class="tag">JavaScript</span> <span class="tag">SQL</span>
+                        <span class="tag">NLP</span> <span class="tag">LLMs</span> <span class="tag">RAG</span> <span class="tag">Computer Vision</span> <span class="tag">Object Detection</span> <span class="tag">AI Agents</span> <span class="tag">Speech Processing</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-brain mr-2"></i> ML/DL</h3>
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-cogs mr-2"></i> Frameworks & Tools</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">Scikit-learn</span> <span class="tag">TensorFlow</span> <span class="tag">PyTorch</span> <span class="tag">YOLO</span>
+                        <span class="tag">PyTorch</span> <span class="tag">Hugging Face</span> <span class="tag">LangChain</span> <span class="tag">FastAPI</span> <span class="tag">Ultralytics</span> <span class="tag">vLLM</span> <span class="tag">Vosk</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-language mr-2"></i> NLP & GenAI</h3>
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-code mr-2"></i> Languages & Infra</h3>
                     <div class="flex flex-wrap gap-2">
-                        <span class="tag">LangChain</span> <span class="tag">Ollama</span> <span class="tag">ChromaDB</span> <span class="tag">Hugging Face</span> <span class="tag">spaCy</span>
-                    </div>
-                </div>
-                <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-eye mr-2"></i> Computer Vision</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">OpenCV</span> <span class="tag">MediaPipe</span> <span class="tag">SAHI</span>
-                    </div>
-                </div>
-                <div class="skill-category bg-gray-50 p-6 rounded-xl">
-                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-globe mr-2"></i> Web & Tools</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag">FastAPI</span> <span class="tag">React</span> <span class="tag">PostgreSQL</span> <span class="tag">Docker</span> <span class="tag">Git</span> <span class="tag">Flask</span>
+                        <span class="tag">Python</span> <span class="tag">C++</span> <span class="tag">Rust</span> <span class="tag">Docker</span> <span class="tag">CI/CD</span> <span class="tag">GCP</span> <span class="tag">PostgreSQL</span> <span class="tag">pgvector</span> <span class="tag">Redis</span>
                     </div>
                 </div>
                 <div class="skill-category bg-gray-50 p-6 rounded-xl">
                     <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-users mr-2"></i> Collaboration</h3>
                     <div class="flex flex-wrap gap-2">
                         <span class="tag">Agile/Scrum</span> <span class="tag">Jira</span> <span class="tag">Teams</span>
+                    </div>
+                </div>
+                <div class="skill-category bg-gray-50 p-6 rounded-xl">
+                    <h3 class="font-bold text-blue-600 mb-4 text-lg"><i class="fas fa-language mr-2"></i> Language</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tag">English (TOEIC 700)</span> <span class="tag">Vietnamese (Native)</span>
                     </div>
                 </div>
             </div>
@@ -327,6 +351,19 @@
                     </div>
                 </div>
 
+                <div class="project-card bg-white rounded-xl overflow-hidden shadow-md cursor-pointer hover:shadow-xl transition-all" onclick="openModal(7)">
+                    <div class="h-32 bg-rose-500 flex items-center justify-center text-white">
+                        <div class="relative">
+                            <i class="fas fa-video text-4xl"></i>
+                            <i class="fas fa-bolt text-xl absolute -top-2 -right-4 text-yellow-300"></i>
+                        </div>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-bold mb-2">CamSearch — Real-Time Video Analytics</h3>
+                        <p class="text-sm text-gray-600 line-clamp-2">End-to-end pipeline: YOLO11s detection, IoU tracking, Qwen2.5-VL captioning, and CLIP vector search via pgvector.</p>
+                    </div>
+                </div>
+
             </div>
 
             <div class="mt-20 bg-blue-900 text-white p-10 rounded-3xl">
@@ -368,13 +405,12 @@
         const projectData = {
             1: {
                 title: "Bilingual Medical RAG Chatbot",
-                desc: `A full-stack AI assistant for medical queries using Retrieval-Augmented Generation (RAG).
+                desc: `A full-stack bilingual AI assistant for medical queries using Retrieval-Augmented Generation (RAG).
                 <ul class="list-disc pl-5 mt-4 space-y-2">
-                    <li>Integrated <b>LangChain</b>, <b>ChromaDB</b>, and local LLMs (<b>Ollama</b>) to generate context-aware, real-time streaming responses.</li>
-                    <li>Built an offline Vietnamese-English translation pipeline using Deep Translator.</li>
+                    <li><b>Implementation:</b> Developed a bilingual assistant using <b>RecursiveCharacterTextSplitter</b> (chunk: 512, overlap: 50) and <b>BGE Embeddings</b> for context-aware retrieval.</li>
+                    <li>Integrated <b>LangChain</b>, <b>ChromaDB</b>, and local LLMs (<b>Ollama</b>) to generate context-aware, streaming responses.</li>
                     <li>Designed a resource-optimized hybrid architecture: React and <b>PostgreSQL</b> running in Docker, while the FastAPI and AI inference engine run locally.</li>
-                    <li>Implemented session management to save, load, and delete chat histories.</li>
-                    <li>Calculated and displayed real-time evaluation metrics including Time To First Token (TTFT) and semantic relevance scores.</li>
+                    <li><b>Key Result:</b> Achieved <b>84% Context Precision</b> with an average latency of <b>&lt; 5s</b> using Ollama.</li>
                 </ul>`,
                 links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/ChatBot-RAG-For-Health-Care", icon: "fab fa-github" }] // Nhớ thay URL thực tế
             },
@@ -431,15 +467,23 @@
             },
             6: {
                 title: "Real-time Live Caption & AI Voice Assistant",
-                desc: `A production-ready commercial desktop application designed to streamline customer service operations through intelligent audio processing and cloud NLP integrations.
+                desc: `A production-ready commercial desktop application that streamlines customer service through real-time Speech-to-Text and cloud LLM integration.
                 <ul class="list-disc pl-5 mt-4 space-y-2">
-                    <li><b>Speech-to-Text Architecture:</b> Built an offline, real-time streaming speech recognition pipeline using <b>Vosk (Kaldi)</b> and <b>soundcard</b> loopback audio capture.</li>
-                    <li><b>Multi-threaded Concurrency:</b> Engineered a highly concurrent system with 4 independent Python threads managed via thread-safe queues to ensure a lag-free UI and sub-second inference latency.</li>
-                    <li><b>Cloud LLM & Prompt Engineering:</b> Integrated Groq Cloud APIs for strict-format conversation summarization (extracting customer info, emails, intent) and contextual smart replies.</li>
-                    <li><b>Production Optimization:</b> Resolved a critical embedded environment memory leak by enforcing active garbage collection (gc.collect) and deterministic thread lifecycle handling.</li>
-                    <li><b>Rust Security & OTA Delivery:</b> Developed a native activation module in <b>Rust</b> (via Maturin) to prevent decompilation, and bundled the system with a custom CustomTkinter OTA updater for silent GitHub-based software deployment.</li>
+                    <li><b>Implementation:</b> Built a real-time <b>Speech-to-Text</b> application using <b>Vosk</b> and integrated cloud LLMs for intelligent conversation summarization and contextual smart replies.</li>
+                    <li><b>Architecture:</b> Engineered a highly concurrent system with Python <b>threading</b> for parallel audio capture and inference, optimizing memory allocation (GC) for stable offline execution.</li>
+                    <li><b>Deployment:</b> Packaged as a commercial desktop app with a custom <b>Rust-based</b> authentication module and an automated CI/CD OTA updater.</li>
                 </ul>`,
                 links: [{ name: "GitHub", url: "https://github.com/GiaoSuD/live-caption-dist", icon: "fab fa-github" }]
+            },
+            7: {
+                title: "CamSearch — Real-Time Video Analytics",
+                desc: `An end-to-end pipeline for real-time video object detection and captioning with vector search (from VinUni).
+                <ul class="list-disc pl-5 mt-4 space-y-2">
+                    <li><b>Implementation:</b> MP4/RTSP &rarr; <b>YOLO11s</b> detection &rarr; IoU tracking &rarr; <b>Qwen2.5-VL-3B</b> (vLLM API) captioning &rarr; <b>CLIP</b> embedding &rarr; PostgreSQL/<b>pgvector</b>.</li>
+                    <li><b>Key Result:</b> Achieved <b>1–2s per event</b> processing latency via vLLM remote GPU batching; searchable event index with HNSW vector similarity.</li>
+                    <li><b>Deployment:</b> Backend (FastAPI) on <b>vast.ai GPU</b> (RTX 3090, 24GB), frontend (Next.js) local; PostgreSQL + pgvector, Redis for rate limiting.</li>
+                </ul>`,
+                links: []
             }
         };
             
